@@ -1,4 +1,4 @@
-// import CTA from './components/CTA'
+import CTA from './components/CTA'
 import { useState } from 'react'
 import Header from './components/Header'
 
@@ -8,7 +8,7 @@ function App(): JSX.Element {
   return (
     <>
       <Header language={language} languageSet={languageSet}></Header>
-      {/* <CTA onClickFunction={() => console.log('clicked')} /> */}
+      <CTA onClickFunction={() => console.log('clicked')} />
     </>
   )
 }

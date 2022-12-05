@@ -1,5 +1,6 @@
+// Theme will not be supported currently, all related is commented
 import cherzaFull from '../assets/cherza-logo-simple.svg'
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
 
 const Selectors = ({
   language,
@@ -8,15 +9,15 @@ const Selectors = ({
   language: string
   languageSet: Function
 }): JSX.Element => {
-  const [theme, themeSet] = useState('dark')
-  useEffect(() => {
-    if(theme === 'dark') {
-      document.getElementsByTagName('html')[0].classList.add('dark')
-    }
-    else {
-      document.getElementsByTagName('html')[0].classList.remove('dark')
-    }
-  },[theme])
+  // const [theme, themeSet] = useState('dark')
+  // useEffect(() => {
+  //   if(theme === 'dark') {
+  //     document.getElementsByTagName('html')[0].classList.add('dark')
+  //   }
+  //   else {
+  //     document.getElementsByTagName('html')[0].classList.remove('dark')
+  //   }
+  // },[theme])
   return (
     <div className="flex gap-8 ">
       <div id="language-selector" className="border-b relative">
@@ -46,7 +47,7 @@ const Selectors = ({
           {' '}
         </div>
       </div>
-      <div id="theme-selector" className="border-b relative">
+      {/* <div id="theme-selector" className="border-b relative">
         <button
           onClick={() => themeSet('dark')}
           className={`p-1 pb-0 ${
@@ -90,7 +91,7 @@ const Selectors = ({
         >
           {' '}
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
@@ -107,10 +108,16 @@ const Header = ({
       <img src={cherzaFull} alt="logo" className="w-20" />
       <nav>
         <ul className="flex items-center h-full gap-12">
-          <li>Inicio</li>
-          <li>Quiénes somos</li>
-          <li>Servicios</li>
-          <li className='btn-primary'>Reservar1423</li>
+          <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
+            Inicio
+          </li>
+          <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
+            Quiénes somos
+          </li>
+          <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
+            Servicios
+          </li>
+          <li className="btn-primary">Reservar</li>
         </ul>
       </nav>
       <Selectors language={language} languageSet={languageSet}></Selectors>

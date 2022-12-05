@@ -1,6 +1,5 @@
-import CTA from './components/CTA'
 import { useState } from 'react'
-import Header from './components/Header'
+import { Header, Hero, Services } from './components/index'
 
 function App(): JSX.Element {
   const [language, languageSet] = useState('ES')
@@ -8,7 +7,10 @@ function App(): JSX.Element {
   return (
     <>
       <Header language={language} languageSet={languageSet}></Header>
-      <CTA onClickFunction={() => console.log('clicked')} />
+      <main>
+        <Hero></Hero>
+        <Services></Services>
+      </main>
     </>
   )
 }

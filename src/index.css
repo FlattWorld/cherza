@@ -14,7 +14,17 @@
   .content {
     @apply flex w-full max-w-7xl;
   }
-  .btn-primary{
-    @apply bg-cherza-gold-strong hover:bg-gradient-to-r hover:from-cherza-gold-strong hover:to-cherza-gold-light py-2 px-4 rounded text-black font-semibold
+  .btn-primary {
+    @apply bg-cherza-gold-strong hover:bg-gradient-to-r hover:from-cherza-gold-strong hover:to-cherza-gold-light py-2 px-4 rounded text-black font-semibold;
+  }
+  .shiny {
+    background: -webkit-linear-gradient(0deg, #cd9626, #ffec7b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .outlined {
+    color: black;
+    text-shadow: -1px -1px 0 #cd9626, 1px -1px 0 #cd9626, -1px 1px 0 #cd9626,
+      1px 1px 0 #cd9626;
   }
 }

@@ -1,5 +1,6 @@
 // Theme will not be supported currently, all related is commented
 import cherzaFull from '../assets/cherza-logo-simple.svg'
+import { header } from '../utils/language'
 // import { useState, useEffect } from 'react'
 
 const Selectors = ({
@@ -23,7 +24,7 @@ const Selectors = ({
       <div id="language-selector" className="border-b relative">
         <button
           onClick={() => languageSet('ES')}
-          className={`p-1 pb-0 ${
+          className={`p-2 py-0 ${
             language === 'ES' ? 'text-cherza-gold-strong font-semibold' : ''
           }`}
           type="button"
@@ -32,7 +33,7 @@ const Selectors = ({
         </button>
         <button
           onClick={() => languageSet('EN')}
-          className={`p-1 pb-0 ${
+          className={`p-2 py-0 ${
             language === 'EN' ? 'text-cherza-gold-strong font-semibold' : ''
           }`}
           type="button"
@@ -103,21 +104,29 @@ const Header = ({
   language: string
   languageSet: Function
 }): JSX.Element => (
-  <header className="bg-black section p-4 text-white">
+  <header className="bg-black section p-4 text-white" id="home">
     <div className="content justify-between items-center">
       <img src={cherzaFull} alt="logo" className="w-20" />
       <nav>
         <ul className="flex items-center h-full gap-12">
-          <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
-            Inicio
-          </li>
-          <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
-            Quiénes somos
-          </li>
-          <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
-            Servicios
-          </li>
-          <li className="btn-primary">Reservar</li>
+          <a href="#home">
+            <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
+              {header[language][0]}
+            </li>
+          </a>
+          <a href="#services">
+            <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
+              {header[language][1]}
+            </li>
+          </a>
+          <a href="#aboutUs">
+            <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
+              {header[language][2]}
+            </li>
+          </a>
+          <a href="#contact">
+            <li className="btn-primary">{header[language][3]}</li>
+          </a>
         </ul>
       </nav>
       <Selectors language={language} languageSet={languageSet}></Selectors>

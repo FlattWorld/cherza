@@ -24,12 +24,12 @@ const ContactForm = ({ language }: { language: string }): JSX.Element => {
     <form
       id="contact"
       action=""
-      className=" w-full xl:w-2/3 my-8 grid grid-cols-3 gap-x-12 gap-y-16"
+      className="flex flex-wrap gap-4 gap-y-12 justify-center"
       onSubmit={handleSubmit}
     >
       <label
         htmlFor="name"
-        className="border rounded-lg p-2 relative border-cherza-gold-strong"
+        className="border rounded-lg py-2 px-1 relative border-cherza-gold-strong"
       >
         <span className="text-xs absolute bg-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
           {contacto[language].fields[0]}
@@ -48,7 +48,7 @@ const ContactForm = ({ language }: { language: string }): JSX.Element => {
       </label>
       <label
         htmlFor="lastName"
-        className="border rounded-lg p-2 relative border-cherza-gold-strong"
+        className="border rounded-lg py-2 px-1 relative border-cherza-gold-strong"
       >
         <span className="text-xs absolute bg-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
           {contacto[language].fields[1]}
@@ -66,7 +66,7 @@ const ContactForm = ({ language }: { language: string }): JSX.Element => {
       </label>
       <label
         htmlFor="phone"
-        className="border rounded-lg p-2 relative border-cherza-gold-strong"
+        className="border rounded-lg py-2 px-1 relative border-cherza-gold-strong"
       >
         <span className="text-xs absolute bg-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
           {contacto[language].fields[2]}
@@ -85,7 +85,7 @@ const ContactForm = ({ language }: { language: string }): JSX.Element => {
       </label>
       <label
         htmlFor="mail"
-        className="border rounded-lg p-2 relative border-cherza-gold-strong"
+        className="border rounded-lg py-2 px-1 relative border-cherza-gold-strong"
       >
         <span className="text-xs absolute bg-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
           {contacto[language].fields[3]}
@@ -103,7 +103,7 @@ const ContactForm = ({ language }: { language: string }): JSX.Element => {
       </label>
       <label
         htmlFor="service"
-        className="border rounded-lg p-2 relative border-cherza-gold-strong"
+        className="border rounded-lg py-2 px-1 relative border-cherza-gold-strong"
       >
         <span className="text-xs absolute bg-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
           {contacto[language].fields[4]}
@@ -122,7 +122,7 @@ const ContactForm = ({ language }: { language: string }): JSX.Element => {
       </label>
       <label
         htmlFor="passengers"
-        className="border rounded-lg p-2 relative border-cherza-gold-strong"
+        className="border rounded-lg py-2 px-1 relative border-cherza-gold-strong"
       >
         <span className="text-xs absolute bg-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
           {contacto[language].fields[5]}
@@ -139,15 +139,14 @@ const ContactForm = ({ language }: { language: string }): JSX.Element => {
           }}
         />
       </label>
-      <div className="col-span-3 flex justify-center">
-        <button
-          type="submit"
-          disabled={state.submitting}
-          className="btn-primary font-bold tracking-widest py-2 px-16 rounded-lg "
-        >
-          {contacto[language].button}
-        </button>
-      </div>
+
+      <button
+        type="submit"
+        disabled={state.submitting}
+        className="btn-primary font-bold tracking-widest py-2 px-16 rounded-lg "
+      >
+        {contacto[language].button}
+      </button>
     </form>
   )
 }
@@ -155,8 +154,8 @@ const ContactForm = ({ language }: { language: string }): JSX.Element => {
 const Contacto = ({ language }: { language: string }): JSX.Element => {
   return (
     <div className="section bg-black">
-      <div className="content py-28 justify-start items-start flex-col text-white gap-12">
-        <h3 className="text-5xl">
+      <div className="content py-16 md:py-28 justify-start items-start flex-col text-white gap-12">
+        <h3 className="text-3xl md:text-5xl">
           {contacto[language].h3[0]}{' '}
           <span className="shiny">{contacto[language].h3[1]}</span>
         </h3>

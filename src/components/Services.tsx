@@ -14,10 +14,10 @@ const images = [
 
 const CoolTitle = ({ language }: { language: string }): JSX.Element => (
   <h2 className="flex flex-col relative items-center w-full">
-    <span className="outlined text-7xl opacity-30 absolute whitespace-nowrap -top-12">
+    <span className="outlined text-3xl lg:text-7xl opacity-30 absolute whitespace-nowrap lg:-top-12 -top-8">
       {services[language].h2[0]}
     </span>
-    <span className="text-5xl relative z-10">
+    <span className=" text-2xl lg:text-5xl relative z-10">
       {services[language].h2[1]}{' '}
       <span className="shiny">{services[language].h2[2]}</span>{' '}
       {services[language].h2[3]}
@@ -27,21 +27,24 @@ const CoolTitle = ({ language }: { language: string }): JSX.Element => (
 
 const Services = ({ language }: { language: string }): JSX.Element => (
   <div className="section bg-black text-white tracking-wider">
-    <div className="content py-28 flex-col items-center gap-12" id="services">
+    <div
+      className="content py-16 lg:py-28 flex-col items-center gap-12"
+      id="services"
+    >
       <CoolTitle language={language}></CoolTitle>
       <img src={carsServices} alt="cars" />
     </div>
-    <div className="content pb-28">
+    <div className="content pb-8 flex-wrap justify-center">
       {services[language].cards.map(
         (service: [string, string], idx: number) => (
-          <div key={service[0]} className=" w-1/3 px-4">
+          <div key={service[0]} className="w-full sm:w-1/2 lg:w-1/3 p-4">
             <div
-              className="bg-cherza-gray flex flex-col group hover:text-black hover:bg-cherza-gold-strong text-lg
+              className="bg-cherza-gray flex flex-col group hover:text-black hover:bg-cherza-gold-strong focus:bg-cherza-gold-strong text-lg
                 items-center justify-start p-4 py-8 rounded-2xl transition-colors
              gap-8"
             >
               <h3>{service[0]}</h3>
-              <p>{service[1]}</p>
+              <p className="h-24">{service[1]}</p>
               <img
                 className="h-48 group-hover:hidden"
                 src={images[idx][0]}
@@ -54,7 +57,7 @@ const Services = ({ language }: { language: string }): JSX.Element => (
               />
               <a
                 href="#contact"
-                className="bg-cherza-gray rounded-xl border px-4 py-2 mt-20 hover:bg-black text-white self-center group-hover:text-cherza-gold-strong"
+                className="bg-cherza-gray rounded-xl border px-4 py-2 hover:bg-black text-white self-center group-hover:text-cherza-gold-strong"
               >
                 {services[language].button}
               </a>

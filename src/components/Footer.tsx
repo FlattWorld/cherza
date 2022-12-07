@@ -13,7 +13,7 @@ const Footer = (): JSX.Element => {
       <div className="content text-white py-16 flex-col items-center tracking-wider">
         <div className="flex w-full items-center justify-between">
           <img src={cherzaTagHybrid} alt="logo" className="w-60" />
-          <ul className="flex items-center h-full gap-12">
+          <ul className="hidden md:flex items-center h-full gap-12">
             <a href="#home">
               <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
                 Inicio
@@ -30,10 +30,13 @@ const Footer = (): JSX.Element => {
               </li>
             </a>
           </ul>
-          <a href="https://wa.me/527221698023?text=Hola cherza!">
+          <a
+            className="hidden lg:block"
+            href="https://wa.me/527221698023?text=Hola cherza!"
+          >
             722 169 8023
           </a>
-          <div className="flex gap-6">
+          <div className="flex gap-4 xl:gap-6">
             <a
               target="_blank"
               rel="noreferrer"

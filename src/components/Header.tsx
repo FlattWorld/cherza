@@ -1,24 +1,45 @@
 // Theme will not be supported currently, all related is commented
 import cherzaFull from '../assets/cherza-logo-simple.svg'
 import { header } from '../utils/language'
-// import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 const Selectors = ({
   language,
   languageSet,
+  mobile = false,
 }: {
   language: string
   languageSet: Function
+  mobile?: boolean
 }): JSX.Element => {
-  // const [theme, themeSet] = useState('dark')
-  // useEffect(() => {
-  //   if(theme === 'dark') {
-  //     document.getElementsByTagName('html')[0].classList.add('dark')
-  //   }
-  //   else {
-  //     document.getElementsByTagName('html')[0].classList.remove('dark')
-  //   }
-  // },[theme])
+  if (mobile)
+    return (
+      <div className="flex gap-8 ">
+        <div id="language-selector" className="border-b relative">
+          <button
+            onClick={() => languageSet('ES')}
+            className={`p-2 py-0 ${language === 'ES' ? ' font-semibold' : ''}`}
+            type="button"
+          >
+            ES
+          </button>
+          <button
+            onClick={() => languageSet('EN')}
+            className={`p-2 py-0 ${language === 'EN' ? ' font-semibold' : ''}`}
+            type="button"
+          >
+            EN
+          </button>
+          <div
+            className={`absolute -bottom-0.5 w-1/2 h-1 bg-cherza-gray transform transition-transform ${
+              language === 'EN' ? 'translate-x-full' : ''
+            }`}
+          >
+            {' '}
+          </div>
+        </div>
+      </div>
+    )
   return (
     <div className="flex gap-8 ">
       <div id="language-selector" className="border-b relative">
@@ -48,54 +69,81 @@ const Selectors = ({
           {' '}
         </div>
       </div>
-      {/* <div id="theme-selector" className="border-b relative">
-        <button
-          onClick={() => themeSet('dark')}
-          className={`p-1 pb-0 ${
-            theme === 'dark' ? 'text-cherza-gold-strong font-semibold' : ''
-          }`}
-          type="button"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              fillRule="evenodd"
-              d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </button>
-        <button
-          onClick={() => themeSet('light')}
-          className={`p-1 pb-0 ${
-            theme === 'light' ? 'text-cherza-gold-strong font-semibold' : ''
-          }`}
-          type="button"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="w-6 h-6"
-          >
-            <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
-          </svg>
-        </button>
-        <div
-          className={`absolute -bottom-0.5 w-1/2 h-1 bg-cherza-gold-strong transform transition-transform ${
-            theme === 'light' ? 'translate-x-full' : ''
-          }`}
-        >
-          {' '}
-        </div>
-      </div> */}
     </div>
   )
 }
+
+const MobileMenu = ({
+  isOpen,
+  isOpenSet,
+  language,
+  languageSet,
+}: {
+  isOpen: boolean
+  isOpenSet: Function
+  language: string
+  languageSet: Function
+}): JSX.Element => (
+  <div className="relative lg:hidden">
+    <button
+      onClick={() => isOpenSet(!isOpen)}
+      type="button"
+      className="h-6 w-8 flex flex-col justify-between items-end"
+    >
+      <div
+        className={`bg-cherza-gold-strong h-1 transform transition ${
+          isOpen ? 'w-8 -rotate-45 translate-y-2.5' : 'w-6'
+        }`}
+      ></div>
+      <div
+        className={`bg-cherza-gold-strong h-1 w-8 ${isOpen ? 'hidden' : ''}`}
+      ></div>
+      <div
+        className={`bg-cherza-gold-strong h-1 transform transition ${
+          isOpen ? 'w-8 rotate-45 -translate-y-2.5' : 'w-6'
+        }`}
+      ></div>
+    </button>
+    {isOpen && (
+      <div className="flex flex-col items-center gap-4 bg-cherza-gold-strong absolute right-8 w-60 rounded-xl pt-2 pb-6 whitespace-nowrap text-black">
+        <nav className="">
+          <ul
+            className="flex items-center h-full gap-1 flex-col"
+            onClick={() => isOpenSet(false)}
+          >
+            <a href="#home">
+              <li className="px-4 py-2 cursor-pointer">
+                {header[language][0]}
+              </li>
+            </a>
+            <a href="#services">
+              <li className="px-4 py-2 cursor-pointer">
+                {header[language][1]}
+              </li>
+            </a>
+            <a href="#aboutUs">
+              <li className="px-4 py-2 cursor-pointer">
+                {header[language][2]}
+              </li>
+            </a>
+            <a href="#contact">
+              <li className="bg-black text-cherza-gold-strong px-4 py-2 rounded-lg">
+                {header[language][3]}
+              </li>
+            </a>
+          </ul>
+        </nav>
+        <div className="">
+          <Selectors
+            mobile
+            language={language}
+            languageSet={languageSet}
+          ></Selectors>
+        </div>
+      </div>
+    )}
+  </div>
+)
 
 const Header = ({
   language,
@@ -103,35 +151,46 @@ const Header = ({
 }: {
   language: string
   languageSet: Function
-}): JSX.Element => (
-  <header className="bg-black section p-4 text-white" id="home">
-    <div className="content justify-between items-center">
-      <img src={cherzaFull} alt="logo" className="w-20" />
-      <nav>
-        <ul className="flex items-center h-full gap-12">
-          <a href="#home">
-            <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
-              {header[language][0]}
-            </li>
-          </a>
-          <a href="#services">
-            <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
-              {header[language][1]}
-            </li>
-          </a>
-          <a href="#aboutUs">
-            <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
-              {header[language][2]}
-            </li>
-          </a>
-          <a href="#contact">
-            <li className="btn-primary">{header[language][3]}</li>
-          </a>
-        </ul>
-      </nav>
-      <Selectors language={language} languageSet={languageSet}></Selectors>
-    </div>
-  </header>
-)
+}): JSX.Element => {
+  const [isOpen, isOpenSet] = useState(false)
+  return (
+    <header className="bg-black section p-4 text-white" id="home">
+      <div className="content justify-between items-center">
+        <img src={cherzaFull} alt="logo" className="w-20" />
+        <nav className="hidden lg:block">
+          <ul className="flex items-center h-full gap-12">
+            <a href="#home">
+              <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
+                {header[language][0]}
+              </li>
+            </a>
+            <a href="#services">
+              <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
+                {header[language][1]}
+              </li>
+            </a>
+            <a href="#aboutUs">
+              <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
+                {header[language][2]}
+              </li>
+            </a>
+            <a href="#contact">
+              <li className="btn-primary">{header[language][3]}</li>
+            </a>
+          </ul>
+        </nav>
+        <div className="hidden lg:block">
+          <Selectors language={language} languageSet={languageSet}></Selectors>
+        </div>
+        <MobileMenu
+          language={language}
+          languageSet={languageSet}
+          isOpen={isOpen}
+          isOpenSet={isOpenSet}
+        />
+      </div>
+    </header>
+  )
+}
 
 export default Header

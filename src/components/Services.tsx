@@ -12,7 +12,7 @@ const images = [
   [card3, card3Hover],
 ]
 
-const CoolTitle = ({ language }: { language: string }): JSX.Element => (
+const CoolTitle = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => (
   <h2 className="flex flex-col relative items-center w-full">
     <span className="outlined text-3xl lg:text-7xl opacity-30 absolute whitespace-nowrap lg:-top-12 -top-8">
       {services[language].h2[0]}
@@ -25,7 +25,7 @@ const CoolTitle = ({ language }: { language: string }): JSX.Element => (
   </h2>
 )
 
-const Services = ({ language }: { language: string }): JSX.Element => (
+const Services = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => (
   <div className="section bg-black text-white tracking-wider">
     <div
       className="content py-16 lg:py-28 flex-col items-center gap-12"
@@ -35,36 +35,34 @@ const Services = ({ language }: { language: string }): JSX.Element => (
       <img src={carsServices} alt="cars" />
     </div>
     <div className="content pb-8 flex-wrap justify-center">
-      {services[language].cards.map(
-        (service: [string, string], idx: number) => (
-          <div key={service[0]} className="w-full sm:w-1/2 lg:w-1/3 p-4">
-            <div
-              className="bg-cherza-gray flex flex-col group hover:text-black hover:bg-cherza-gold-strong focus:bg-cherza-gold-strong text-lg
+      {services[language].cards.map((service: any, idx: number) => (
+        <div key={service[0]} className="w-full sm:w-1/2 lg:w-1/3 p-4">
+          <div
+            className="bg-cherza-gray flex flex-col group hover:text-black hover:bg-cherza-gold-strong focus:bg-cherza-gold-strong text-lg
                 items-center justify-start p-4 py-8 rounded-2xl transition-colors
              gap-8"
+          >
+            <h3>{service[0]}</h3>
+            <p className="h-24">{service[1]}</p>
+            <img
+              className="h-48 group-hover:hidden"
+              src={images[idx][0]}
+              alt="car"
+            />
+            <img
+              className="h-48 hidden group-hover:block self-start transform -translate-x-4"
+              src={images[idx][1]}
+              alt="car"
+            />
+            <a
+              href="#contact"
+              className="bg-cherza-gray rounded-xl border px-4 py-2 hover:bg-black text-white self-center group-hover:text-cherza-gold-strong"
             >
-              <h3>{service[0]}</h3>
-              <p className="h-24">{service[1]}</p>
-              <img
-                className="h-48 group-hover:hidden"
-                src={images[idx][0]}
-                alt="car"
-              />
-              <img
-                className="h-48 hidden group-hover:block self-start transform -translate-x-4"
-                src={images[idx][1]}
-                alt="car"
-              />
-              <a
-                href="#contact"
-                className="bg-cherza-gray rounded-xl border px-4 py-2 hover:bg-black text-white self-center group-hover:text-cherza-gold-strong"
-              >
-                {services[language].button}
-              </a>
-            </div>
+              {services[language].button}
+            </a>
           </div>
-        ),
-      )}
+        </div>
+      ))}
     </div>
   </div>
 )

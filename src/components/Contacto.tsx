@@ -3,7 +3,7 @@ import contactPic from '../assets/contactPic.svg'
 import { useForm } from '@formspree/react'
 import { contacto } from '../utils/language'
 
-const ContactForm = ({ language }: { language: string }): JSX.Element => {
+const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
   const onFocusHandler = (e: any): void => {
     e.target.previousSibling.style.top = '-1.5rem'
   }
@@ -151,7 +151,7 @@ const ContactForm = ({ language }: { language: string }): JSX.Element => {
   )
 }
 
-const Contacto = ({ language }: { language: string }): JSX.Element => {
+const Contacto = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
   return (
     <div className="section bg-black">
       <div className="content py-16 md:py-28 justify-start items-start flex-col text-white gap-12">

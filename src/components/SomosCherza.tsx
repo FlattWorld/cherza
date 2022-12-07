@@ -1,6 +1,6 @@
 import { somosCherza } from '../utils/language'
 
-const SomosCherza = ({ language }: { language: string }): JSX.Element => (
+const SomosCherza = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => (
   <div className="section bg-cherza-gray ">
     <div
       className="content py-16 justify-start items-start flex-col text-white gap-12"

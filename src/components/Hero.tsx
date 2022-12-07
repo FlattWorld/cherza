@@ -1,7 +1,7 @@
 import heroCar from './../assets/hero-car.svg'
 import { CTA } from './index'
 import { hero } from '../utils/language'
-const Hero = ({ language }: { language: string }): JSX.Element => (
+const Hero = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => (
   <div className="section bg-cherza-gray text-white">
     <div className="content py-8 lg:py-28 flex gap-16 flex-col lg:flex-row">
       <div className="flex flex-col gap-12 items items-start">

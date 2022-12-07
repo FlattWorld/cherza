@@ -1,7 +1,7 @@
 import wheel from '../assets/Wheel.svg'
 import { cta } from '../utils/language'
 
-const CTA = ({ language }: { language: string }): JSX.Element => (
+const CTA = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => (
   <a
     href="#contact"
     className="text-2xl relative flex items-center justify-center group z-10 px-6 py-10 rounded-full"

@@ -8,7 +8,7 @@ const Selectors = ({
   languageSet,
   mobile = false,
 }: {
-  language: string
+  language: 'EN' | 'ES'
   languageSet: Function
   mobile?: boolean
 }): JSX.Element => {
@@ -81,7 +81,7 @@ const MobileMenu = ({
 }: {
   isOpen: boolean
   isOpenSet: Function
-  language: string
+  language: 'EN' | 'ES'
   languageSet: Function
 }): JSX.Element => (
   <div className="relative lg:hidden">
@@ -149,7 +149,7 @@ const Header = ({
   language,
   languageSet,
 }: {
-  language: string
+  language: 'EN' | 'ES'
   languageSet: Function
 }): JSX.Element => {
   const [isOpen, isOpenSet] = useState(false)

@@ -107,8 +107,8 @@ export const contacto = {
   },
 }
 export const footer = {
-  EN: {},
-  ES: {},
+  EN: ['Home', 'Services', 'About us'],
+  ES: ['Inicio', 'Servicios', 'Quiénes somos'],
 }
 
 export const cta = {

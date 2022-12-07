@@ -13,14 +13,14 @@ function App(): JSX.Element {
 
   return (
     <>
-      <Header language={language} languageSet={languageSet} />
+      <Header language={language as 'EN' | 'ES'} languageSet={languageSet} />
       <main>
-        <Hero language={language} />
-        <Services language={language} />
-        <SomosCherza language={language} />
-        <Contacto language={language} />
+        <Hero language={language as 'EN' | 'ES'} />
+        <Services language={language as 'EN' | 'ES'} />
+        <SomosCherza language={language as 'EN' | 'ES'} />
+        <Contacto language={language as 'EN' | 'ES'} />
       </main>
-      <Footer language={language} />
+      <Footer language={language as 'EN' | 'ES'} />
     </>
   )
 }

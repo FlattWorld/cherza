@@ -1,7 +1,8 @@
 import cherzaTagHybrid from '../assets/cherza-tag-hybrid.svg'
 import { useState, useEffect } from 'react'
+import { footer } from '../utils/language'
 
-const Footer = (): JSX.Element => {
+const Footer = ({language}: {language: 'EN'|'ES'}): JSX.Element => {
   const [year, yearSet] = useState(2022)
 
   useEffect(() => {
@@ -16,17 +17,17 @@ const Footer = (): JSX.Element => {
           <ul className="hidden md:flex items-center h-full gap-12">
             <a href="#home">
               <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
-                Inicio
+                {footer[language][0]}
               </li>
             </a>
             <a href="#services">
               <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
-                Servicios
+              {footer[language][1]}
               </li>
             </a>
             <a href="#aboutUs">
               <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
-                Quiénes somos
+              {footer[language][2]}
               </li>
             </a>
           </ul>

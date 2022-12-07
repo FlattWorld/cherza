@@ -35,7 +35,7 @@ const Footer = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
             className="hidden lg:block"
             href="https://wa.me/527221698023?text=Hola cherza!"
           >
-            722 169 8023
+            (722) 169 8023
           </a>
           <div className="flex gap-4 xl:gap-6">
             <a

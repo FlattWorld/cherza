@@ -13,7 +13,7 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
   const [state, handleSubmit] = useForm('xgeqgyyl')
   if (state.succeeded) {
     return (
-      <p className="text-5xl">
+      <p className="text-3xl lg:text-5xl">
         {contacto[language].contactSuccess[0]}
         <span className="shiny">{contacto[language].contactSuccess[1]}</span>
         {contacto[language].contactSuccess[2]}

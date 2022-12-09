@@ -31,7 +31,7 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
     <form
       id="contact"
       action=""
-      className="flex flex-wrap gap-y-12 gap-6 justify-evenly px-4"
+      className="flex flex-wrap gap-y-12 gap-6 justify-evenly px-4 mt-8 lg:mt-0"
       onSubmit={handleSubmit}
     >
       <label

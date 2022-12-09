@@ -14,7 +14,7 @@ const images = [
 
 const CoolTitle = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => (
   <h2 className="flex flex-col relative items-center w-full">
-    <span className="outlined text-4xl lg:text-7xl opacity-30 absolute whitespace-nowrap lg:-top-12 -top-6">
+    <span className="outlined text-cherza-black text-4xl lg:text-7xl opacity-30 absolute whitespace-nowrap lg:-top-12 -top-6">
       {services[language].h2[0]}
     </span>
     <span className=" text-3xl lg:text-5xl relative z-10 font-medium">

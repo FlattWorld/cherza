@@ -11,9 +11,13 @@ const Footer = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
   }, [])
   return (
     <div className="section bg-cherza-gray">
-      <div className="content text-white py-16 flex-col items-center tracking-wider">
+      <div className="content text-white py-8 flex-col items-center ">
         <div className="flex w-full items-center justify-between">
-          <img src={cherzaTagHybrid} alt="logo" className="w-60" />
+          <img
+            src={cherzaTagHybrid}
+            alt="logo"
+            className=" w-28 sm:w-40 md:w-60"
+          />
           <ul className="hidden md:flex items-center h-full gap-12">
             <a href="#home">
               <li className="hover:text-cherza-gold-strong px-4 py-2 cursor-pointer">
@@ -32,12 +36,12 @@ const Footer = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
             </a>
           </ul>
           <a
-            className="hidden lg:block"
+            className="font-bold"
             href="https://wa.me/527221698023?text=Hola cherza!"
           >
             (722) 169 8023
           </a>
-          <div className="flex gap-4 xl:gap-6">
+          <div className="flex gap-2 xl:gap-6">
             <a
               target="_blank"
               rel="noreferrer"
@@ -97,7 +101,7 @@ const Footer = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
             </a>
           </div>
         </div>
-        <div className="mt-4 pt-4 border-t flex w-1/2 justify-center border-cherza-gray-light text-cherza-gray-light tracking-widest">
+        <div className="mt-4 pt-4 border-t flex w-1/2 justify-center border-cherza-gray-light text-cherza-gray-light ">
           <p>&copy; Cherza, {year}</p>
         </div>
       </div>

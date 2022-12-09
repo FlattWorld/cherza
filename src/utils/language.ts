@@ -4,11 +4,11 @@ export const header = {
 }
 export const hero = {
   EN: {
-    title: ['Travel fast ', 'and ', 'safely'],
+    title: ['Travel fast ', 'and ', 'safely.'],
     des: ['Book a service in minutes,', "we'll take care of the rest."],
   },
   ES: {
-    title: ['Viaja rápido y ', 'con ', 'seguridad'],
+    title: ['Viaja rápido y ', 'con ', 'seguridad.'],
     des: ['Reserva un viaje en minutos,', 'nosotros nos encargamos del resto.'],
   },
 }

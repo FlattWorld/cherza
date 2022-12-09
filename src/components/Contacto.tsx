@@ -8,7 +8,14 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
     e.target.previousSibling.style.top = '-1.5rem'
   }
   const onBlurHandler = (e: any): void => {
-    if (e.target.value === '') e.target.previousSibling.style.top = '-0.5rem'
+    if (e.target.value === '') {
+      e.target.previousSibling.style.top = '-0.5rem'
+      e.target.classList.add('bg-transparent')
+      e.target.classList.remove('bg-cherza-gray')
+    } else {
+      e.target.classList.remove('bg-transparent')
+      e.target.classList.add('bg-cherza-gray')
+    }
   }
   const [state, handleSubmit] = useForm('xgeqgyyl')
   if (state.succeeded) {
@@ -24,14 +31,14 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
     <form
       id="contact"
       action=""
-      className="flex flex-wrap gap-4 gap-y-12 justify-center"
+      className="flex flex-wrap gap-y-12 gap-6 justify-evenly px-4"
       onSubmit={handleSubmit}
     >
       <label
         htmlFor="name"
-        className="border rounded-lg py-2 px-1 relative border-cherza-gold-strong"
+        className="border rounded-lg relative border-cherza-gold-strong"
       >
-        <span className="text-xs absolute bg-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
+        <span className="text-sm absolute bg-cherza-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
           {contacto[language].fields[0]}
         </span>
         <input
@@ -39,7 +46,7 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
           type="text"
           name="name"
           id="name"
-          className="bg-transparent focus:outline-none text-cherza-gold-light"
+          className="bg-transparent focus:outline-none text-lg px-4 py-2 rounded-lg"
           onFocus={(e) => onFocusHandler(e)}
           onBlur={(e) => {
             onBlurHandler(e)
@@ -48,16 +55,16 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
       </label>
       <label
         htmlFor="lastName"
-        className="border rounded-lg py-2 px-1 relative border-cherza-gold-strong"
+        className="border rounded-lg relative border-cherza-gold-strong"
       >
-        <span className="text-xs absolute bg-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
+        <span className="text-sm absolute bg-cherza-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
           {contacto[language].fields[1]}
         </span>
         <input
           type="text"
           name="lastName"
           id="lastName"
-          className="bg-transparent focus:outline-none text-cherza-gold-light"
+          className="bg-transparent focus:outline-none text-lg px-4 py-2 rounded-lg"
           onFocus={(e) => onFocusHandler(e)}
           onBlur={(e) => {
             onBlurHandler(e)
@@ -66,9 +73,9 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
       </label>
       <label
         htmlFor="phone"
-        className="border rounded-lg py-2 px-1 relative border-cherza-gold-strong"
+        className="border rounded-lg relative border-cherza-gold-strong"
       >
-        <span className="text-xs absolute bg-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
+        <span className="text-sm absolute bg-cherza-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
           {contacto[language].fields[2]}
         </span>
         <input
@@ -76,7 +83,7 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
           type="tel"
           name="phone"
           id="phone"
-          className="bg-transparent focus:outline-none text-cherza-gold-light"
+          className="bg-transparent focus:outline-none text-lg px-4 py-2 rounded-lg"
           onFocus={(e) => onFocusHandler(e)}
           onBlur={(e) => {
             onBlurHandler(e)
@@ -85,16 +92,16 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
       </label>
       <label
         htmlFor="mail"
-        className="border rounded-lg py-2 px-1 relative border-cherza-gold-strong"
+        className="border rounded-lg relative border-cherza-gold-strong"
       >
-        <span className="text-xs absolute bg-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
+        <span className="text-sm absolute bg-cherza-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
           {contacto[language].fields[3]}
         </span>
         <input
           type="mail"
           name="mail"
           id="mail"
-          className="bg-transparent focus:outline-none text-cherza-gold-light"
+          className="bg-transparent focus:outline-none text-lg px-4 py-2 rounded-lg"
           onFocus={(e) => onFocusHandler(e)}
           onBlur={(e) => {
             onBlurHandler(e)
@@ -103,9 +110,9 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
       </label>
       <label
         htmlFor="service"
-        className="border rounded-lg py-2 px-1 relative border-cherza-gold-strong"
+        className="border rounded-lg relative border-cherza-gold-strong"
       >
-        <span className="text-xs absolute bg-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
+        <span className="text-sm absolute bg-cherza-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
           {contacto[language].fields[4]}
         </span>
         <input
@@ -113,7 +120,7 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
           type="text"
           name="service"
           id="service"
-          className="bg-transparent focus:outline-none text-cherza-gold-light"
+          className="bg-transparent focus:outline-none text-lg px-4 py-2 rounded-lg"
           onFocus={(e) => onFocusHandler(e)}
           onBlur={(e) => {
             onBlurHandler(e)
@@ -122,9 +129,9 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
       </label>
       <label
         htmlFor="passengers"
-        className="border rounded-lg py-2 px-1 relative border-cherza-gold-strong"
+        className="border rounded-lg relative border-cherza-gold-strong"
       >
-        <span className="text-xs absolute bg-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
+        <span className="text-sm absolute bg-cherza-black -top-2 left-2 px-2 text-cherza-gray-light transition-all">
           {contacto[language].fields[5]}
         </span>
         <input
@@ -132,7 +139,7 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
           type="number"
           name="passengers"
           id="passengers"
-          className="bg-transparent focus:outline-none text-cherza-gold-light"
+          className="bg-transparent focus:outline-none text-lg px-4 py-2 rounded-lg"
           onFocus={(e) => onFocusHandler(e)}
           onBlur={(e) => {
             onBlurHandler(e)
@@ -143,7 +150,7 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
       <button
         type="submit"
         disabled={state.submitting}
-        className="btn-primary font-bold tracking-widest py-2 px-16 rounded-lg "
+        className="btn-primary  py-2 px-16 rounded-lg "
       >
         {contacto[language].button}
       </button>
@@ -153,21 +160,19 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
 
 const Contacto = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
   return (
-    <div className="section bg-black">
-      <div className="content py-16 md:py-28 justify-start items-start flex-col text-white gap-12">
-        <h3 className="text-3xl md:text-5xl">
+    <div className="section bg-cherza-black ">
+      <div className="content py-28 justify-start items-start flex-col text-white gap-4">
+        <h3 className="text-3xl md:text-6xl font-medium">
           {contacto[language].h3[0]}{' '}
           <span className="shiny">{contacto[language].h3[1]}</span>
         </h3>
-        <p className="max-w-xl w-full tracking-widest">
-          {contacto[language].p}
-        </p>
+        <p className="max-w-xl w-full lg:text-xl">{contacto[language].p}</p>
         <div className="flex w-full justify-between items-center">
           <ContactForm language={language} />
           <img
             src={contactPic}
             alt="contact-picture"
-            className="w-96 rounded-lg hidden xl:block"
+            className="w-[350px] rounded-lg hidden xl:block"
           />
         </div>
       </div>

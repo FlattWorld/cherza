@@ -15,17 +15,24 @@ const Selectors = ({
   if (mobile)
     return (
       <div className="flex gap-8 ">
-        <div id="language-selector" className="border-b relative">
+        <div
+          id="language-selector"
+          className="border-b relative font-cherza-paragraph"
+        >
           <button
             onClick={() => languageSet('ES')}
-            className={`p-2 py-0 ${language === 'ES' ? ' font-semibold' : ''}`}
+            className={`p-2 py-0 ${
+              language === 'ES' ? 'font-bold' : 'font-normal'
+            }`}
             type="button"
           >
             ES
           </button>
           <button
             onClick={() => languageSet('EN')}
-            className={`p-2 py-0 ${language === 'EN' ? ' font-semibold' : ''}`}
+            className={`p-2 py-0 ${
+              language === 'EN' ? 'font-bold' : 'font-medium'
+            }`}
             type="button"
           >
             EN
@@ -45,8 +52,10 @@ const Selectors = ({
       <div id="language-selector" className="border-b relative">
         <button
           onClick={() => languageSet('ES')}
-          className={`p-2 py-0 ${
-            language === 'ES' ? 'text-cherza-gold-strong font-semibold' : ''
+          className={`p-2 py-0 hover:font-bold ${
+            language === 'ES'
+              ? 'text-cherza-gold-strong font-bold'
+              : 'font-normal'
           }`}
           type="button"
         >
@@ -54,8 +63,10 @@ const Selectors = ({
         </button>
         <button
           onClick={() => languageSet('EN')}
-          className={`p-2 py-0 ${
-            language === 'EN' ? 'text-cherza-gold-strong font-semibold' : ''
+          className={`p-2 py-0 hover:font-bold ${
+            language === 'EN'
+              ? 'text-cherza-gold-strong font-bold'
+              : 'font-normal'
           }`}
           type="button"
         >
@@ -127,7 +138,7 @@ const MobileMenu = ({
               </li>
             </a>
             <a href="#contact">
-              <li className="bg-black text-cherza-gold-strong px-4 py-2 rounded-lg">
+              <li className="bg-cherza-black  text-cherza-gold-strong px-4 py-2 rounded-lg">
                 {header[language][3]}
               </li>
             </a>
@@ -154,7 +165,7 @@ const Header = ({
 }): JSX.Element => {
   const [isOpen, isOpenSet] = useState(false)
   return (
-    <header className="bg-black section p-4 text-white" id="home">
+    <header className="bg-cherza-black  section p-4 text-white" id="home">
       <div className="content justify-between items-center">
         <img src={cherzaFull} alt="logo" className="w-20" />
         <nav className="hidden lg:block">

@@ -14,35 +14,32 @@ const images = [
 
 const CoolTitle = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => (
   <h2 className="flex flex-col relative items-center w-full">
-    <span className="outlined text-3xl lg:text-7xl opacity-30 absolute whitespace-nowrap lg:-top-12 -top-8">
+    <span className="outlined text-4xl lg:text-7xl opacity-30 absolute whitespace-nowrap lg:-top-12 -top-6">
       {services[language].h2[0]}
     </span>
-    <span className=" text-2xl lg:text-5xl relative z-10">
+    <span className=" text-3xl lg:text-5xl relative z-10 font-medium">
       {services[language].h2[1]}{' '}
-      <span className="shiny">{services[language].h2[2]}</span>{' '}
+      <span className="shiny font-medium">{services[language].h2[2]}</span>{' '}
       {services[language].h2[3]}
     </span>
   </h2>
 )
 
 const Services = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => (
-  <div className="section bg-black text-white tracking-wider">
-    <div
-      className="content py-16 lg:py-28 flex-col items-center gap-12"
-      id="services"
-    >
+  <div className="section bg-cherza-black  text-white ">
+    <div className="content py-28 flex-col items-center gap-12" id="services">
       <CoolTitle language={language}></CoolTitle>
       <img src={carsServices} alt="cars" />
     </div>
     <div className="content pb-8 flex-wrap justify-center">
       {services[language].cards.map((service: any, idx: number) => (
-        <div key={service[0]} className="w-full sm:w-1/2 lg:w-1/3 p-4">
+        <div key={service[0]} className="w-full sm:w-1/2 lg:w-1/3 p-6">
           <div
-            className="bg-cherza-gray flex flex-col group hover:text-black hover:bg-cherza-gold-strong focus:bg-cherza-gold-strong text-lg
-                items-center justify-start p-4 py-8 rounded-2xl transition-colors
-             gap-8"
+            className="bg-cherza-gray flex flex-col group hover:text-black
+              hover:bg-cherza-gold-strong focus:bg-cherza-gold-strong text-lg
+                items-center justify-start rounded-2xl transition-colors pt-8 gap-6 pb-4 px-4"
           >
-            <h3>{service[0]}</h3>
+            <h3 className="font-medium">{service[0]}</h3>
             <p className="h-24">{service[1]}</p>
             <img
               className="h-48 group-hover:hidden"
@@ -56,7 +53,9 @@ const Services = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => (
             />
             <a
               href="#contact"
-              className="bg-cherza-gray rounded-xl border px-4 py-2 hover:bg-black text-white self-center group-hover:text-cherza-gold-strong"
+              className="bg-cherza-gray rounded-xl border px-4 py-2 hover:bg-cherza-black
+              text-white self-center group-hover:text-cherza-gold-strong group-hover:self-end
+              hover:font-bold group-hover:border-none"
             >
               {services[language].button}
             </a>

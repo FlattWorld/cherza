@@ -11,7 +11,7 @@
 
 ## About the project
 
-In Situ Energía website. <!-- Nombre del proyecto -->
+Cherza is a transport agency for the area of the state of México, offers a variety of services, from private driver to package transportation. <!-- Nombre del proyecto -->
 
 ## Roadmap <!-- Features del proyecto (Actuales y planeadas) -->
 

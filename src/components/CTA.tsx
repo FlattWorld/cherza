@@ -14,7 +14,10 @@ const CTA = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => (
       alt="button"
       className="absolute w-24 group-hover:w-40 transition-all duration-500 group-hover:animate-spin-slow animate-pulse"
     />
-    <div className="rounded-full w-0 h-0 bg-gradient-to-r from-cherza-gold-strong to-cherza-gold-light group-hover:w-36 group-hover:h-36 absolute transition-all duration-500"></div>
+    <div
+      className="rounded-full w-0 h-0 bg-gradient-to-r from-cherza-gold-strong to-cherza-gold-light
+    group-hover:w-32 group-hover:h-32 absolute transition-all duration-500"
+    ></div>
   </a>
 )
 

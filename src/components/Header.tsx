@@ -116,7 +116,7 @@ const MobileMenu = ({
       ></div>
     </button>
     {isOpen && (
-      <div className="flex flex-col items-center gap-4 bg-cherza-gold-strong absolute right-8 w-60 rounded-xl pt-2 pb-6 whitespace-nowrap text-black">
+      <div className="flex flex-col items-center gap-4 bg-cherza-gold-strong absolute right-8 w-60 rounded-xl pt-2 pb-6 whitespace-nowrap text-black z-10">
         <nav className="">
           <ul
             className="flex items-center h-full gap-1 flex-col"

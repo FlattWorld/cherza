@@ -161,7 +161,7 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
 const Contacto = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
   return (
     <div className="section bg-cherza-black ">
-      <div className="content py-28 justify-start items-start flex-col text-white gap-4">
+      <div className="content py-28 justify-start items-start flex-col text-white gap-6">
         <h3 className="text-3xl md:text-6xl font-medium">
           {contacto[language].h3[0]}{' '}
           <span className="shiny">{contacto[language].h3[1]}</span>

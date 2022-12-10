@@ -175,6 +175,17 @@ const Contacto = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
             className="w-[350px] rounded-lg hidden xl:block"
           />
         </div>
+
+        <div className="text-sm text-white group flex w-full gap-4 items-center whitespace-nowrap">
+          <span className="text-sm">
+            {contacto[language].paymentMethods.title}
+          </span>
+          <ul className=" flex w-full gap-4 flex-wrap">
+            {contacto[language].paymentMethods.methods.map((method) => (
+              <li key={method}>{method}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   )

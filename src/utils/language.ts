@@ -86,6 +86,15 @@ export const contacto = {
     button: 'Send',
     h3: ['Begin a new ', 'adventure'],
     p: 'Are you traveling alone or with friends/family? We got you covered! You are missing only one step to begin your adventure, contact us and enjoy our services.',
+    paymentMethods: {
+      title: 'Payment methods:',
+      methods: [
+        'Paypal',
+        'Bank transfer',
+        'Online Payment',
+        'Credit / Debit Card',
+      ],
+    },
   },
   ES: {
     contactSuccess: [
@@ -104,6 +113,15 @@ export const contacto = {
     button: 'Enviar',
     h3: ['Comienza una nueva ', 'aventura'],
     p: '¿Viajas solo o con tus amigos/familia? ¡Tenemos lo que necesitas! Estás a un paso de iniciar una nueva aventura, ponte en contacto con nosotros y comienza a disfutar de nuestro servicio.',
+    paymentMethods: {
+      title: 'Metodos de pago:',
+      methods: [
+        'Paypal',
+        'Transferencia Bancaria',
+        'Pago en linea',
+        'Tarjeta de crédito / débito',
+      ],
+    },
   },
 }
 export const footer = {

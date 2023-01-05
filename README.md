@@ -96,7 +96,7 @@ Make a pull request and when approved and merged the changes will show up on web
 
 <!-- AUTORES -->
 
-**Abel Herrera (Frontend)**
+**Abel Herrera**
 
 [<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />][github]
 [<img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" />][twitter]
@@ -106,7 +106,7 @@ Make a pull request and when approved and merged the changes will show up on web
 [twitter]: https://twitter.com/AbelHerreraZam1
 [linkedin]: https://www.linkedin.com/in/abelherreraz/
 
-**Eduardo Yáñez (UX/UI)**
+**Eduardo Yáñez**
 
 [<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />][github]
 [<img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" />][twitter]

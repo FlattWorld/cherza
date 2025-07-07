@@ -26,7 +26,7 @@ const Selectors = ({
             }`}
             type="button"
           >
-            ES
+            Español
           </button>
           <button
             onClick={() => languageSet('EN')}
@@ -35,7 +35,7 @@ const Selectors = ({
             }`}
             type="button"
           >
-            EN
+            English
           </button>
           <div
             className={`absolute -bottom-0.5 w-1/2 h-1 bg-cherza-gray transform transition-transform ${
@@ -59,7 +59,7 @@ const Selectors = ({
           }`}
           type="button"
         >
-          ES
+          Español
         </button>
         <button
           onClick={() => languageSet('EN')}
@@ -70,7 +70,7 @@ const Selectors = ({
           }`}
           type="button"
         >
-          EN
+          English
         </button>
         <div
           className={`absolute -bottom-0.5 w-1/2 h-1 bg-cherza-gold-strong transform transition-transform ${

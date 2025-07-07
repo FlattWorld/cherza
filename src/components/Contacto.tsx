@@ -2,6 +2,7 @@
 import contactPic from '../assets/contactPic.svg'
 import { useForm } from '@formspree/react'
 import { contacto } from '../utils/language'
+import wp from '../assets/descarga-wht.png'
 
 const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
   const onFocusHandler = (e: any): void => {
@@ -154,6 +155,18 @@ const ContactForm = ({ language }: { language: 'EN' | 'ES' }): JSX.Element => {
       >
         {contacto[language].button}
       </button>
+      <a
+        className="bg-[#25d366] flex items-center px-3 rounded-lg font-bold hover:bg-green-600"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Chat on WhatsApp"
+        href={`https://wa.me/527221698023?text=${encodeURIComponent(
+          contacto[language].wpMessage,
+        )}`}
+      >
+        <img src={wp} className="w-[28px] mr-1" />
+        {contacto[language].wp}
+      </a>
     </form>
   )
 }
